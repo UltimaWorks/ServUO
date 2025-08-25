@@ -396,10 +396,10 @@ namespace Server.Engines.Reports
 
                                     graph.FillPolygon(barBrush, new PointF[] { pts[2], pts[3], pts[6], pts[5] });
 
-                                    using (SolidBrush ltBrsh = new SolidBrush(System.Windows.Forms.ControlPaint.Light(item.ItemColor, 0.1f)))
+                                    using (SolidBrush ltBrsh = new SolidBrush(LightenColor(item.ItemColor, 0.1f)))
                                         graph.FillPolygon(ltBrsh, new PointF[] { pts[0], pts[2], pts[5], pts[4] });
 
-                                    using (SolidBrush drkBrush = new SolidBrush(System.Windows.Forms.ControlPaint.Dark(item.ItemColor, 0.05f)))
+                                    using (SolidBrush drkBrush = new SolidBrush(DarkenColor(item.ItemColor, 0.05f)))
                                         graph.FillPolygon(drkBrush, new PointF[] { pts[0], pts[1], pts[3], pts[2] });
 
                                     graph.DrawLine(pen, pts[0], pts[1]);
@@ -941,14 +941,30 @@ namespace Server.Engines.Reports
         private void CalculateBarWidth(int dataCount, float barGraphWidth)
         {
             // White space between each bar is the same as bar width itself
-            this._barWidth = barGraphWidth / (dataCount * 2);  // Each bar has 1 white space 
+            this._barWidth = barGraphWidth / (dataCount * 2);  // Each bar has 1 white space
             //_barWidth =/* (float)Math.Floor(*/_barWidth/*)*/;
             this._spaceBtwBars = this._barWidth;
         }
 
+        private static Color LightenColor(Color color, float amount)
+        {
+            int r = color.R + (int)((255 - color.R) * amount);
+            int g = color.G + (int)((255 - color.G) * amount);
+            int b = color.B + (int)((255 - color.B) * amount);
+            return Color.FromArgb(color.A, r, g, b);
+        }
+
+        private static Color DarkenColor(Color color, float amount)
+        {
+            int r = (int)(color.R * (1f - amount));
+            int g = (int)(color.G * (1f - amount));
+            int b = (int)(color.B * (1f - amount));
+            return Color.FromArgb(color.A, r, g, b);
+        }
+
         //*********************************************************************
         //
-        // This method assigns default value to the bar graph properties and is only 
+        // This method assigns default value to the bar graph properties and is only
         // called from BarGraph constructors
         //
         //*********************************************************************
