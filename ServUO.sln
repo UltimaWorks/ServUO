@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scripts", "Scripts\Scripts.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptCompiler", "ScriptCompiler\ScriptCompiler.csproj", "{6AFA1198-783A-4DAD-824F-720FF9EE59E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{62E579C1-A335-4986-83DD-3602569D9C14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -50,6 +52,10 @@ Global
 		{6AFA1198-783A-4DAD-824F-720FF9EE59E2}.Debug|x64.Build.0 = Debug|Any CPU
 		{6AFA1198-783A-4DAD-824F-720FF9EE59E2}.Release|x64.ActiveCfg = Release|Any CPU
 		{6AFA1198-783A-4DAD-824F-720FF9EE59E2}.Release|x64.Build.0 = Release|Any CPU
+                {62E579C1-A335-4986-83DD-3602569D9C14}.Debug|x64.ActiveCfg = Debug|Any CPU
+                {62E579C1-A335-4986-83DD-3602569D9C14}.Debug|x64.Build.0 = Debug|Any CPU
+                {62E579C1-A335-4986-83DD-3602569D9C14}.Release|x64.ActiveCfg = Release|Any CPU
+                {62E579C1-A335-4986-83DD-3602569D9C14}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
